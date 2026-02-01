@@ -1,6 +1,7 @@
-{# Hidden marker field that triggers post-type-discovery to identify as "page" #}
+{# Marker field that triggers post-type-discovery to identify as "page" #}
 {{ input({
   name: "page",
-  type: "hidden",
-  value: "true"
+  type: "text",
+  value: "true",
+  label: "Page Type Marker (DEBUG - should be hidden)"
 }) | indent(2) }}

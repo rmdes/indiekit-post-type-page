@@ -1,6 +1,6 @@
 {
   "name": "@rmdes/indiekit-post-type-page",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Page post type for Indiekit - creates root-level slash pages like /about, /now, /uses",
   "keywords": [
     "indiekit",
