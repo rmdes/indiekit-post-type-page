@@ -1,0 +1,34 @@
+{
+  "name": "@rmdes/indiekit-post-type-page",
+  "version": "1.0.0",
+  "description": "Page post type for Indiekit - creates root-level slash pages like /about, /now, /uses",
+  "keywords": [
+    "indiekit",
+    "indiekit-plugin",
+    "indieweb",
+    "post-type",
+    "page",
+    "slash-pages"
+  ],
+  "homepage": "https://github.com/rmdes/indiekit-post-type-page",
+  "author": {
+    "name": "Ricardo Mendes",
+    "url": "https://rmendes.net"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmdes/indiekit-post-type-page.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
