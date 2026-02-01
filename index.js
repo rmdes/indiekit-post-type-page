@@ -9,12 +9,18 @@
 
 const defaults = {
   name: "Page",
-  // Discovery property - tells Indiekit how to identify this post type
-  // When a post has a "page" property, it's recognized as a page type
-  discovery: "page",
+  // Use h: "page" for microformat type-based discovery
+  // This sets properties.type to "page" which survives mf2→JF2 conversion
+  h: "page",
+  // Root-level paths for slash pages (no dates in URL)
+  post: {
+    path: "{slug}.md",
+    url: "{slug}",
+  },
+  media: {
+    path: "media/pages/{filename}",
+  },
   fields: {
-    // Hidden marker field - triggers post-type-discovery to identify as "page"
-    page: { required: true },
     name: { required: true }, // Page title (e.g., "About", "Now", "Uses")
     summary: {}, // Optional page description
     content: { required: true }, // Page content
@@ -34,8 +40,9 @@ export default class PagePostType {
   get config() {
     return {
       name: this.options.name,
-      h: "entry",
-      discovery: this.options.discovery,
+      h: this.options.h,
+      post: this.options.post,
+      media: this.options.media,
       fields: this.options.fields,
     };
   }
