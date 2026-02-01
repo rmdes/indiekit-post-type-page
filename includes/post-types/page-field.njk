@@ -1,0 +1,6 @@
+{# Hidden marker field that triggers post-type-discovery to identify as "page" #}
+{{ input({
+  name: "page",
+  type: "hidden",
+  value: "true"
+}) | indent(2) }}

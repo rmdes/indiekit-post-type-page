@@ -9,7 +9,12 @@
 
 const defaults = {
   name: "Page",
+  // Discovery property - tells Indiekit how to identify this post type
+  // When a post has a "page" property, it's recognized as a page type
+  discovery: "page",
   fields: {
+    // Hidden marker field - triggers post-type-discovery to identify as "page"
+    page: { required: true },
     name: { required: true }, // Page title (e.g., "About", "Now", "Uses")
     summary: {}, // Optional page description
     content: { required: true }, // Page content
@@ -30,6 +35,7 @@ export default class PagePostType {
     return {
       name: this.options.name,
       h: "entry",
+      discovery: this.options.discovery,
       fields: this.options.fields,
     };
   }
