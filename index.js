@@ -12,9 +12,12 @@ const defaults = {
   // Use h: "page" for microformat type-based discovery
   // This sets properties.type to "page" which survives mf2→JF2 conversion
   h: "page",
-  // Root-level paths for slash pages (no dates in URL)
+  // Slash pages are stored under content/pages/ so the theme's pages
+  // directory-data (content/pages/pages.json → layouts/page.njk) applies, while
+  // the URL stays root-level (no dates). Writing to the content root instead
+  // leaves pages with no layout (raw HTML / mojibake) on a fresh site.
   post: {
-    path: "{slug}.md",
+    path: "pages/{slug}.md",
     url: "{slug}",
   },
   media: {
